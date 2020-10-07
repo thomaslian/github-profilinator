@@ -114,19 +114,22 @@ export const SocialField = (
         return socialSites.map(siteId => {
             const site = SOCIAL_SITES[siteId];
             return (
-                <TextArea
-                    rows={1}
-                    autoSize={true}
-                    key={siteId}
-                    suffix={site.title}
-                    name={siteId}
-                    value={
-                        localSocialFieldProps.data.sites[siteId]
-                            ? localSocialFieldProps.data.sites[siteId].username
-                            : ''
-                    }
-                    onChange={onChange}
-                />
+                <label>
+                    <b>{site.title}</b>
+                    <TextArea
+                        rows={1}
+                        autoSize={true}
+                        key={siteId}
+                        suffix={site.title}
+                        name={siteId}
+                        value={
+                            localSocialFieldProps.data.sites[siteId]
+                                ? localSocialFieldProps.data.sites[siteId].username
+                                : ''
+                        }
+                        onChange={onChange}
+                    />
+                </label>
             );
         });
     };
