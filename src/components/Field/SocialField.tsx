@@ -114,8 +114,7 @@ export const SocialField = (
         return socialSites.map(siteId => {
             const site = SOCIAL_SITES[siteId];
             return (
-                <label>
-                    <b>{site.title}</b>
+                <Form.Item label={site.title}>
                     <TextArea
                         rows={1}
                         autoSize={true}
@@ -129,7 +128,7 @@ export const SocialField = (
                         }
                         onChange={onChange}
                     />
-                </label>
+                </Form.Item>
             );
         });
     };
@@ -166,7 +165,7 @@ export const SocialField = (
                     </Dropdown>
                 </Col>
             </Row>
-            <Form>{generateSocialInputs()}</Form>
+            <Form layout="vertical">{generateSocialInputs()}</Form>
         </>
     );
 };
